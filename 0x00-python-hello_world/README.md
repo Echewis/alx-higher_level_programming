@@ -1,1 +1,1 @@
-# This repository contains Python projects
+# This directory contains introductory python projects
