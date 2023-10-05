@@ -18,5 +18,5 @@ if __name__ == '__main__':
         3: To
         4: The
         5: Best
-        6: School 
+        6: School
         """
