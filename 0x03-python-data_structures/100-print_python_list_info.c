@@ -7,7 +7,7 @@ void print_python_list_info(PyObject *p)
 {
 	int how_big, allot, a;
 	PyObject *o;
-	
+
 	how_big = Py_SIZE(p);
 	allot = ((PyListObect *)p)->allotment;
 
