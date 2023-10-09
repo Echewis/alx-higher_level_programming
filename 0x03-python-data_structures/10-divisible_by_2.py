@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" This function will find numbers that can multiply by 2"""
+
 def divisible_by_2(my_list=[]):
     divide = []
     for d in range(len(my_list)):
@@ -9,3 +9,4 @@ def divisible_by_2(my_list=[]):
             divide.append(False)
 
     return (divide)
+    """This function will find numbers that can multiply by 2"""
