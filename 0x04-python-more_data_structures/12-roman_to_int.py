@@ -15,4 +15,4 @@ def roman_to_int(roman_string):
             output += value
         former_num = value
     return (output)
-   """Function that converts Roman to integer""" 
+    """ Function that converts Roman to integer """
