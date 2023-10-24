@@ -3,6 +3,7 @@
 
 
 class Square:
+    """This is the class that defines the square """
     def __init__(self, size=0):
         """Condition to check for integer
         Args:
