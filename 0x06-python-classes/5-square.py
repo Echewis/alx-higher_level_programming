@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+"""Define the square """
+
+
 class Square:
-    """Class defu=inition """
+    """Class definition """
     def __init__(self, size=0):
         """Initialing The  square
         Args:
