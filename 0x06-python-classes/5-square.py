@@ -10,6 +10,7 @@ class Square:
             TypeError: if it's not int
         """
         self.size = size
+
     @property
     def size(self):
         """Setting the size of square """
