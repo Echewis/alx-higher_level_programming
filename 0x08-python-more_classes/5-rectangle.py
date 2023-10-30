@@ -46,32 +46,32 @@ class Rectangle:
         else:
             self.__height = value
 
-        def area(self):
-            """Initializing area"""
-            return (self.__width * self.__height)
+    def area(self):
+        """Initializing area"""
+        return (self.__width * self.__height)
 
-        def perimeter(self):
-            """Intializing perimeter """
-            if self.__width == 0 or self.__height == 0:
-                return (0)
-            return ((self.__width * 2) + (self.__height * 2))
+    def perimeter(self):
+        """Intializing perimeter """
+        if self.__width == 0 or self.__height == 0:
+            return (0)
+        return ((self.__width * 2) + (self.__height * 2))
 
-        def __str__(self) -> str:
-            """Diagram for rectangle """
-            if self.__width == 0 or self.__height == 0:
-                return ("")
-            square = ""
-            for var in range(self.__width):
-                for hor in range(self.__height):
-                    square += "#"
-                if var < self.__height - 1:
-                    square += "\n"
-            return (square)
+    def __str__(self) -> str:
+        """Diagram for rectangle """
+        if self.__width == 0 or self.__height == 0:
+            return ("")
+        square = ""
+        for var in range(self.__width):
+            for hor in range(self.__height):
+                square += "#"
+            if var < self.__height - 1:
+                square += "\n"
+        return (square)
 
-        def __repr__(self):
-            """definition of repr """
-            return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+    def __repr__(self):
+        """definition of repr """
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
-        def __del__(self):
-            """definition of del"""
-            print("Bye rectangle...")
+    def __del__(self):
+        """definition of del"""
+        print("Bye rectangle...")
