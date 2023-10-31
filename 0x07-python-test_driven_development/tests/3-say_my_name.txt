@@ -1,0 +1,9 @@
+The ``3-say_my_name`` module
+============================
+
+``Using ``3-say_my_name```
+=============================
+
+
+Importing fuction from the module:
+	>>> say_my_name = __import__("3-say_my_name").3-say_my_name

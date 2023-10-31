@@ -1,0 +1,10 @@
+The ``5-text_indentation`` module
+=================================
+
+Using ''5-text_indentation''
+----------------------------
+
+Importing fuction from the module:
+	>>> 5-text_indentation = ("5-text_indentation").5-text_indentation
+
+

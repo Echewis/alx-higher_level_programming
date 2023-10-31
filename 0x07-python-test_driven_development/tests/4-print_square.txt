@@ -1,0 +1,10 @@
+The ``4-print_square`` module
+..............................
+
+Using ``print_square``
+------------------------------
+
+IMPORTING FUCTION FROM THE MODULE:
+	>>> 4-print_square.py = __import__("4-print_square").4-print_square
+
+
