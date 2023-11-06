@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Initializing of lookup definition"""
+""" Initializing of lookup definition
+    and methods of objects
+"""
 
 
 def lookup(obj):
