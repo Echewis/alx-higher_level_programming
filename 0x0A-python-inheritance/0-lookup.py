@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Initializing of lookup definition
-    and methods of objects
+    and methods of object
 """
 
 
