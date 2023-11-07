@@ -2,7 +2,7 @@
 """ This is a module that define a class student"""
 
 
-class student:
+class Student:
     """class creation """
 
     def __init__(self, first_name, last_name, age):
