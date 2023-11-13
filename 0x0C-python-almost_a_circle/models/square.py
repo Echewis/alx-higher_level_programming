@@ -21,7 +21,7 @@ class Square(Rectangle):
         This is the setter for size
         """
         if type(value) is not int:
-                raise TypeError("width must be an integer")
+            raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
 
@@ -47,4 +47,5 @@ class Square(Rectangle):
 
     def __str__(self):
         """will override the string method """
-        return ("[{}] ({}) {}/{} - {}".format(type(self).__name__, self.id, self.x, self.y, self.size))
+        return ("[{}] ({}) {}/{} - {}".format(type(self).__name__,
+                self.id, self.x, self.y, self.size))

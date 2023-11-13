@@ -87,7 +87,7 @@ class Rectangle(Base):
         """Overiding the string method """
 
         return ("[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.id,
-                                    self.x, self.y, self.width, self.height))
+                self.x, self.y, self.width, self.height))
 
     def update(self, *args, **kwargss):
         """Updating the public method """
@@ -106,6 +106,6 @@ class Rectangle(Base):
         adding the public method that returns the dictionary representation
         of a Rectangle
         """
-        return {'id' : getattr(self, "id"), 'width' : getattr(self, "width"),
-                'height' : getattr(self, "height"), 'x' : getattr(self, "x"),
-                'y' : getattr(self, "y")}
+        return {'id': getattr(self, "id"), 'width': getattr(self, "width"),
+                'height': getattr(self, "height"), 'x': getattr(self, "x"),
+                'y': getattr(self, "y")}
