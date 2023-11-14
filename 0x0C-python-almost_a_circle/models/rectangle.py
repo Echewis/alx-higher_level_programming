@@ -15,7 +15,6 @@ class Rectangle(Base):
             Class cunstructor
         """
         super().__init__(id)
-
         self.width = width
         self.height = height
         self.x = x
@@ -61,7 +60,7 @@ class Rectangle(Base):
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-        return self.__height = value
+        self.__height = value
 
     @property
     def x(self):
@@ -82,7 +81,7 @@ class Rectangle(Base):
             raise TypeError("x must be an integer")
         if x < 0:
             raise ValueError("x must be >= 0")
-        return self.__x = value
+        self.__x = value
 
     @property
     def y(self):
@@ -103,7 +102,7 @@ class Rectangle(Base):
             raise TypeError("y must be an integer")
         if y < 0:
             raise ValueError("y must be >= 0")
-        return self.__y = value
+        self.__y = value
 
     def area(self):
         """
