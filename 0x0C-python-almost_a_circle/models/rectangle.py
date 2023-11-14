@@ -35,10 +35,11 @@ class Rectangle(Base):
             Args:
                 value (int): value that will be set
         """
-        if type(value) in not int:
+        if type(value) is not int:
             raise TypeError("width must be an integer")
-        if value < 0:
-            raise ValueError("width must be >= 0")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+
         self.__width = value
 
     @property
@@ -58,8 +59,9 @@ class Rectangle(Base):
         """
         if type(value) is not int:
             raise TypeError("height must be an integer")
-        if value < 0:
-            raise ValueError("height must be >= 0")
+        if value <= 0:
+            raise ValueError("height must be > 0")
+
         self.__height = value
 
     @property
@@ -81,6 +83,7 @@ class Rectangle(Base):
             raise TypeError("x must be an integer")
         if x < 0:
             raise ValueError("x must be >= 0")
+
         self.__x = value
 
     @property
@@ -102,6 +105,7 @@ class Rectangle(Base):
             raise TypeError("y must be an integer")
         if y < 0:
             raise ValueError("y must be >= 0")
+
         self.__y = value
 
     def area(self):
@@ -114,11 +118,14 @@ class Rectangle(Base):
         """
             This will print in stdout the rectangle instance
         """
+        symbol = "#"
+        rectangle = ""
+
         print("/n" * self.y, end="")
 
-        for a in range(self.__height):
-            print(" " * self.x, end="")
-            print("#" * self.width)
+        for a in range(self.height):
+            rectangle += (" " * self.x) + (symbol * self.width) + "\n"
+        print(rectangle, end="")
 
     def __str__(self):
         """
@@ -128,7 +135,7 @@ class Rectangle(Base):
         return ("[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.id,
                 self.x, self.y, self.width, self.height))
 
-    def update(self, *args, **kwargss):
+    def update(self, *args, **kwargs):
         """
             Updating the public method
             Args:
