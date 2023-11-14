@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """  In the  this file, the class Square will inherit from Rectangle
 """
-from models.retangle import Rectangle
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
     """class Square inherites from Rectangle"""
     def __init__(self, size, x=0, y=0, id=None):
         """class cunstructor for square """
-        supper().__init__(size, size, x, y, id)
+        super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
