@@ -10,7 +10,7 @@ class Rectangle(Base):
             __init__()
     """
 
-    def __init__.(self, width, height, x=0, y=0, id=None):
+    def __init__(self, width, height, x=0, y=0, id=None):
         """
             Class cunstructor
         """
@@ -81,7 +81,7 @@ class Rectangle(Base):
         """
         if type(value) is not int:
             raise TypeError("x must be an integer")
-        if x < 0:
+        if value < 0:
             raise ValueError("x must be >= 0")
 
         self.__x = value
@@ -103,7 +103,7 @@ class Rectangle(Base):
         """
         if type(value) is not int:
             raise TypeError("y must be an integer")
-        if y < 0:
+        if value < 0:
             raise ValueError("y must be >= 0")
 
         self.__y = value
@@ -146,7 +146,7 @@ class Rectangle(Base):
             artributez = ["id", "width", "height", "x", "y"]
             for a, arg in enumerate(args):
                 if a < len(artributez):
-                    setattr(self, atributez[a], arg)
+                    setattr(self, artributez[a], arg)
         else:
             for key, value in kwargs.items():
                 if hasattr(self, key):
