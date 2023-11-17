@@ -49,3 +49,10 @@ class Square(Rectangle):
         """will override the string method """
         return ("[{}] ({}) {}/{} - {}".format(type(self).__name__,
                 self.id, self.x, self.y, self.size))
+
+    def to_dictionaryself):
+        """
+        This is dictionary representation of square
+        """
+        return {'id': getattr(self, "id"), 'size': getattr(self, "width"),
+                'x': getattr(self, "x"), 'y': getattr(self, "y")}

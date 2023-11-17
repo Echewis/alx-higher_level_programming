@@ -56,3 +56,104 @@ class Base:
         if json_string in None or json_string == "[]":
             return []
         return json.load(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        class instance from a dictionary
+        """
+        if dictionary and dictionary is not {}:
+            if cls.__name__ == "Rectangle":
+                fresh = cls(1, 1)
+            else:
+                fresh = (1)
+            fresh.update(**dictionary)
+            return fresh
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        class instance from a file of Jason
+        """
+        filename = str(cls.__name__) + ".json"
+        try:
+            with open(filename, "r") as jasonfile:
+                list_dicts = Base.from_json_string(jsonfile.read())
+                return [cls.create(**d) for d in list_dicts]
+        except IOError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        serialisation of csv list
+        """
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline="")as csvfile:
+            if list_objs in None or list_objs == []:
+                csvfile.write("[]")
+            else:
+                filename = ["id", "size", "x", "y"]
+                writer = csv.DictWritter(csvfile, filenames=filenames)
+                for o in list_objs:
+                    writer.writerow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_csv(cls):
+        """
+        This is the list of classes That was instantiated from csv file
+        """
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, "r", newline="") as csvfile:
+                if cls.__name__ == "Rectangle":
+                    filenames = ["id", "width", "height", "x", "y"]
+                else:
+                    filenames = ["id", "size", "x", "y"]
+                list_dicts = csv.DictReader(csvfile, filename=fieldnames)
+                list_dicts = [dict([key, int(val)] for key, val in d.items())
+                              for d in list_dicts]
+                return [cls.create(**d) for d i list_dicts]
+        except IOError:
+            return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Will draw a rectangle and square using turtle module
+        Args:
+            list_rectangle (list): a list of rectangle to draw
+            list_square (list): List of square to be draw
+        """
+        turt = turtle.Turtle()
+        turt.screen.bgcolor("#b7312c")
+        turt.pensize(3)
+        trut.shape("turtle")
+
+        turt.color("#ffffff")
+        for rect in list_rectangles:
+            turt.showturtle()
+            turt.up()
+            turt.goto(rect.x, rect.y)
+            turt.down()
+            for a in range(2):
+                turt.forward(rect.width)
+                turt.left(90)
+                turt.forward(rect.height)
+                turt.left(90)
+                turt.hideturtle()
+
+        turt.color("#b5e3d8")
+        for s in list_squares:
+            turt.showturtle()
+            turt.up()
+            turt.goto(s.x, s.y)
+            turt.down()
+            for a in range(2):
+                turt.forward(s.width)
+                turt.left(90)
+                turt.forward(s.height)
+                turt.left(90)
+            turt.hideturtle()
+
+        turtle.exitoniclick()
