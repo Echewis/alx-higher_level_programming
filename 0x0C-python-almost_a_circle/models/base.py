@@ -96,8 +96,8 @@ class Base:
                 if cls.__name__ == "rectangle":
                     fieldnames = ["id", "width", "height", "x", "y"]
                 else:
-                    filename = ["id", "size", "x", "y"]
-                    writer = csv.DictWritter(csvfile, filenames=filenames)
+                    fieldnames = ["id", "size", "x", "y"]
+                    writer = csv.DictWritter(csvfile, fieldnames=fieldnames)
                     for o in list_objs:
                         writer.writerow(o.to_dictionary())
 
