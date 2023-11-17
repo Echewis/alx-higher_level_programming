@@ -28,7 +28,7 @@ class Base:
         """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-        return json.dump(list_dictionaries)
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -55,7 +55,7 @@ class Base:
         """
         if json_string in None or json_string == "[]":
             return []
-        return json.load(json_string)
+        return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
@@ -66,7 +66,7 @@ class Base:
             if cls.__name__ == "Rectangle":
                 fresh = cls(1, 1)
             else:
-                fresh = (1)
+                fresh = cls(1)
             fresh.update(**dictionary)
             return fresh
 
@@ -77,7 +77,7 @@ class Base:
         """
         filename = str(cls.__name__) + ".json"
         try:
-            with open(filename, "r") as jasonfile:
+            with open(filename, "r") as jsonfile:
                 list_dicts = Base.from_json_string(jsonfile.read())
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
@@ -89,14 +89,17 @@ class Base:
         serialisation of csv list
         """
         filename = cls.__name__ + ".csv"
-        with open(filename, "w", newline="")as csvfile:
+        with open(filename, "w", newline="") as csvfile:
             if list_objs in None or list_objs == []:
                 csvfile.write("[]")
             else:
-                filename = ["id", "size", "x", "y"]
-                writer = csv.DictWritter(csvfile, filenames=filenames)
-                for o in list_objs:
-                    writer.writerow(obj.to_dictionary())
+                if cls.__name__ == "rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    filename = ["id", "size", "x", "y"]
+                    writer = csv.DictWritter(csvfile, filenames=filenames)
+                    for o in list_objs:
+                        writer.writerow(o.to_dictionary())
 
     @classmethod
     def load_from_csv(cls):
@@ -107,13 +110,13 @@ class Base:
         try:
             with open(filename, "r", newline="") as csvfile:
                 if cls.__name__ == "Rectangle":
-                    filenames = ["id", "width", "height", "x", "y"]
+                    fieldnames = ["id", "width", "height", "x", "y"]
                 else:
-                    filenames = ["id", "size", "x", "y"]
+                    fieldnames = ["id", "size", "x", "y"]
                 list_dicts = csv.DictReader(csvfile, filename=fieldnames)
                 list_dicts = [dict([key, int(val)] for key, val in d.items())
                               for d in list_dicts]
-                return [cls.create(**d) for d i list_dicts]
+                return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
 
@@ -128,7 +131,7 @@ class Base:
         turt = turtle.Turtle()
         turt.screen.bgcolor("#b7312c")
         turt.pensize(3)
-        trut.shape("turtle")
+        turt.shape("turtle")
 
         turt.color("#ffffff")
         for rect in list_rectangles:
