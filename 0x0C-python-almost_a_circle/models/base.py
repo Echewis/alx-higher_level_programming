@@ -97,7 +97,7 @@ class Base:
                     fieldnames = ["id", "width", "height", "x", "y"]
                 else:
                     fieldnames = ["id", "size", "x", "y"]
-                    writer = csv.DictWritter(csvfile, fieldnames=fieldnames)
+                    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                     for o in list_objs:
                         writer.writerow(o.to_dictionary())
 
