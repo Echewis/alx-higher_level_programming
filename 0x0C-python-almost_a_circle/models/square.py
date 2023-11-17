@@ -50,7 +50,7 @@ class Square(Rectangle):
         return ("[{}] ({}) {}/{} - {}".format(type(self).__name__,
                 self.id, self.x, self.y, self.size))
 
-    def to_dictionaryself):
+    def to_dictionary(self):
         """
         This is dictionary representation of square
         """
