@@ -1,4 +1,4 @@
 #!/usr/bin/node
-exports.CallMeMoby = function (x, thefunction) {
-	for (let a = 0; a < x; a++) thefunction();
+exports.CallMeMoby = function (x, theFunction) {
+	for (let a = 0; a < x; a++) theFunction();
 };
