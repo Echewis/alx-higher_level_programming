@@ -19,5 +19,5 @@ if __name__ == '__main__':
                  ORDER BY states.id ASC")
     rows = curd.fetchall()
 
-    for ro in rows:
-        print(ro)
+    for row in rows:
+        print(row)
