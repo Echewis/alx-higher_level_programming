@@ -24,9 +24,9 @@ def find_peak(list_of_integers):
             if mi // 2 == 0:
                 mi = 2
             mid = mid + mi // 2
-        elif mi > 0 and lost_of_integers[mid] < list_of_integers[mid - 1]:
+        elif mi > 0 and list_of_integers[mid] < list_of_integers[mid - 1]:
             if mi // 2 == 0:
                 mi = 2
-            mid mid - mi // 2
+            mid = mid - mi // 2
         else:
             return list_of_integers[mid]
