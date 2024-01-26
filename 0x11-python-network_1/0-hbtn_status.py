@@ -11,4 +11,4 @@ if __name__ == "__main__":
         page = response.read()
         print("Body response:")
         print("\t- type: {}".format(type(page)))
-        print("\t- content: {}".formart(type(page)))
+        print("\t- content: {}".format(type(page)))
